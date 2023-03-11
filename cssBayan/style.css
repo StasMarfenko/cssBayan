@@ -5,6 +5,7 @@ body {
     background-color: #e2e2e2;
     overflow-x: hidden;
     overflow-y: scroll;
+    height: 150vh;
 }
 
 .container{
@@ -28,19 +29,22 @@ body {
     font-size: 20px;
     transition: color .35s;
     z-index: 100;
-    transition: .3s;
+    transition: .5s;
 }
-.container label::after{
+.container:hover > label::after{
     position: absolute;
     content: '\276F';
     font-size: 38px;
     right: 30px;
     top: 5px;
+    transition: .5s;
 }
+
 .container label:hover{
     transition: .3s;
     background-color: #009fcb;
     color: #ede500;
+    
 }
 .container input {
     display: none;
@@ -79,4 +83,12 @@ transition: .7s;
 .container:hover > label{
     background-color: #0882ed;
     color: #ffffff;
+}
+.container input:hover + label::after{
+    transform: rotate(90deg);
+    transition: .4s;
+}
+.container input:checked + label::after{
+    transform: rotate(90deg);
+    transition: .4s;
 }
