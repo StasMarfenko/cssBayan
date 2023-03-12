@@ -7,59 +7,47 @@ body {
     overflow-y: scroll;
     height: 150vh;
 }
-
 .container{
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 1.2rem;
 }
-/* .container:hover + .container label{
-    background-color: #9a9a9a;
-} */
-
 .container .lorem {
-    position: relative;
     cursor: pointer;
     background-color: #7e7e7e;
     display: block;
-    padding: 20px 0px 20px 20px;
-    width: calc(100%-40px);
+    padding: 1rem;
     color: #ffffff;
-    text-transform: uppercase;
-    font-size: 20px;
+    font-size: 1rem;
     transition: color .35s;
     z-index: 100;
     transition: .5s;
 }
-/* .container:hover > label::after{
-    position: absolute;
-    content: '\276F';
-    font-size: 38px;
-    right: 30px;
-    top: 5px;
+.arrow {
+    float: right;
+    margin-top: -.5rem;
+    font-size: 2rem;
     transition: .5s;
-} */
-.container:hover > .tab-wrap .lorem::after{
-    position: absolute;
-    content: '\276F';
-    font-size: 38px;
-    right: 30px;
-    top: 5px;
+    opacity: 0;
+}
+.container:hover > .tab-wrap .lorem span {
+    opacity: 1;
     transition: .5s;
 }
-
-/* .container label:hover{
-    transition: .3s;
-    background-color: #009fcb;
-    color: #ede500;
-} */
 .container input {
     display: none;
 }
-
 .bayan-inner {
     text-align: center;
     transition: .5s;
+    width: 100%;
+}
+.bayan-inner label{
+    width: 100%;
+    display: block;
+}
+.bayan-inner label:hover{
+    cursor: pointer;
 }
 .bayan-inner img{
     width: 0;
@@ -67,23 +55,14 @@ body {
     transition: .7s;
     cursor: pointer;
 }
-.bayan-inner:hover > img{
-    width: 400px;
-    opacity: 1;
-}
-/* .container input:checked + label + .bayan-inner {
-    height: auto;
-    margin-top: -5px;
-    color: #000;
-    padding: 20px 30px 10px;
-} */
+
 .container input:hover + label + .bayan-inner img{
-width: 400px;
-opacity: 1;
-transition: .7s;
+    width: 100%;
+    opacity: 1;
+    transition: .7s;
 }
 .container input:checked + label + .bayan-inner img{
-    width: 400px;
+    width: 100%;
     opacity: 1;
 }
 .container input:checked + label{
@@ -95,28 +74,83 @@ transition: .7s;
     background-color: #0882ed;
     color: #ede500;
 }
-/* .container input:hover + label::after{
-    transform: rotate(90deg);
-    transition: .4s;
-}
-.container input:checked + label::after{
-    transform: rotate(90deg);
+
+/* .tab-wrap:hover > .lorem span{
+    transform: rotate(45deg);
     transition: .4s;
 } */
-
-
-
-/* wwwwwwwwwwww */
-
-.tab-wrap input:hover + label::after{
-    transform: rotate(90deg);
+.tab-wrap input:hover + .lorem span{
+    transform: rotate(45deg);
     transition: .4s;
 }
-.tab-wrap:hover > label::after{
-    transform: rotate(90deg);
+.tab-wrap input:checked + .lorem span{
+    transform: rotate(45deg);
     transition: .4s;
 }
-.tab-wrap input:checked > label::after{
-    transform: rotate(90deg);
-    transition: .4s;
+
+/* breakpoints */
+
+@media (min-width: 520px) {
+    .container{
+        width: 80%;
+    }
+    .container input:hover + label + .bayan-inner img{
+        width: 80%;
+    }
+    .container input:checked + label + .bayan-inner img{
+        width: 80%;
+    }
+    .container .lorem{
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+    .arrow{
+        font-size: 2rem;
+    }
 }
+
+@media (min-width: 759px) {
+
+    .container input:hover + label + .bayan-inner img{
+        width: 60%;
+    }
+    .container input:checked + label + .bayan-inner img{
+        width: 60%;
+    }
+    .container .lorem{
+        font-size: 1.8rem;
+        text-transform: capitalize;
+    }
+    .arrow {
+        font-size: 3rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .container input:hover + label + .bayan-inner img{
+        width: 40%;
+    }
+    .container input:checked + label + .bayan-inner img{
+        width: 40%;
+    }
+}
+
+@media (min-width: 1820px) {
+    .container{
+        width: 60%;
+    }
+    .container input:hover + label + .bayan-inner img{
+        width: 40%;
+    }
+    .container input:checked + label + .bayan-inner img{
+        width: 40%;
+    }
+    .container .lorem{
+        font-size: 2.5rem;
+    }
+
+}
+
+
+
