@@ -22,9 +22,10 @@ body {
     transition: color .35s;
     z-index: 100;
     transition: .5s;
+    display: flex;
 }
 .arrow {
-    float: right;
+    margin-left: auto;
     margin-top: -.5rem;
     font-size: 2rem;
     transition: .5s;
